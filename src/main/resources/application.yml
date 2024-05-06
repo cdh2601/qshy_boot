@@ -1,0 +1,48 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 150MB
+      max-request-size: 500MB
+    #      ?????????? ?????
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qshy?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useAffectedRows=true
+    username: root
+    password: password
+  #    10.0.4.9 QSHY2023  150.158.45.145
+  mail:
+    # ???????????????????????smtp.qq.com
+    default-encoding: UTF-8
+    host: smtp.163.com
+    username: Z1549327200@163.com
+    password: SUELXHYWTNJAUXOO
+    properties:
+      mail:
+        smtp:
+          auth: true
+          #???? SSL ???????????
+          starttls:
+            enable: true
+            required: true
+    port: 25
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: delFlag  # ????????????
+      logic-delete-value: 1 # ??????(??? 1)
+      logic-not-delete-value: 0 # ??????(??? 0)
+
+  configuration:
+    # ????sql?dev???pro?????
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # ??????
+    map-underscore-to-camel-case: true
+    # map ??value?null???
+    call-setters-on-nulls: true
+  mapper-locations: classpath*:mapper/xml/*.xml
+
+server:
+  port: 8080
+file-save-path: D:/QSHY/

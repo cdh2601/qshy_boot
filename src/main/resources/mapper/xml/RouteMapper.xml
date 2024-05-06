@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qshy.mapper.RouteMapper">
+
+    <select id="selectScenicIds" resultType="com.qshy.entity.SingleRoute">
+        select sr.last_id, sr.next_id
+        from single_route sr
+        where sr.route_id = #{routeId}
+    </select>
+    <select id="selectRouteIdOfSc" resultType="java.lang.String">
+        select distinct r.route_id
+        from route r
+        where r.scenic_json like #{id}
+    </select>
+    <select id="selectRouteIdOfArea" resultType="java.lang.String">
+        select distinct r.route_id
+        from route r
+        where r.scenic_json like #{sqlLike}
+    </select>
+</mapper>

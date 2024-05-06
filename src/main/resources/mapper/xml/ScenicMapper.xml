@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qshy.mapper.ScenicMapper">
+
+    <select id="selectScId" resultType="java.lang.String">
+        select sc.scenic_id
+        from scenic sc
+        where sc.scenic_name like #{name};
+    </select>
+    <select id="selectAeaList" resultType="java.lang.String">
+        select distinct sc.area
+        from scenic sc
+            ${ew.customSqlSegment}
+    </select>
+    <select id="selectidListByName" resultType="java.lang.String">
+        select sc.scenic_id
+        from scenic sc
+        where sc.scenic_name like #{name};
+    </select>
+</mapper>

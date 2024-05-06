@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>模板</title>
+</head>
+
+<body>
+<div style="background-color:#ECECEC; padding: 35px;">
+    <table cellpadding="0" align="center"
+           style="width: 800px;height: 100%; margin: 0px auto;
+            text-align: left; position: relative; border-radius: 5px;font-size: 14px;
+             font-family:微软雅黑, 黑体; line-height: 1.5; box-shadow:
+             rgb(153, 153, 153) 0px 0px 5px; border-collapse: collapse;
+              background: #fff initial initial initial initial;">
+        <tbody>
+        <tr>
+            <th valign="middle"
+                style="height: 25px; line-height: 25px; padding: 15px 35px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: RGB(148,0,211); background-color: RGB(148,0,211); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;">
+                <font face="微软雅黑" size="5" style="color: rgb(255, 255, 255); ">QSHY</font>
+            </th>
+        </tr>
+        <tr>
+            <td style="word-break:break-all">
+                <div style="padding:25px 35px 40px; background-color:#fff;opacity:0.8;">
+                    <h2 style="margin: 5px 0px; ">
+                        <span style="line-height: 20px;  color: #333333; ">
+                            <span style="line-height: 22px;  font-size: medium; ">
+                                尊敬的用户：</span>
+                        </span>
+                    </h2>
+                    <!-- 中文 -->
+                    <p>您好！<br>感谢您使用QSHY，您的账号正在进行邮箱验证，验证码为：
+                        <span style="color: #ff8c00; " th:text="${code}"></span>，
+                        验证码区分大小写,有效期3分钟，请尽快填写验证码完成验证！</p>
+
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
